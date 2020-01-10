@@ -1,0 +1,72 @@
+<div class="container">
+    <div #departments>
+        Departments
+    </div>
+    <button class="btn btn-primary mb-3" (click)="displayDivData()">Display div data</button>
+
+
+    <table class="table table-dark text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr [ngClass]="{'bg-green': greenColorState, 'bg-dark':darkColorState }">
+                <td>1</td>
+                <td>MEAN Stack</td>
+                <td>
+                    <button class="btn btn-success" (click)="changeColor()">Change Color</button>
+                </td>
+            </tr>
+
+            <tr [ngStyle]="{'height.px': trHeight}">
+                <td>1</td>
+                <td>MEAN Stack</td>
+                <td>
+                    <button class="btn btn-success" (click)="changeHeight()">Change Height</button>
+                </td>
+            </tr>
+
+            <tr >
+                <td>
+                    2
+                </td>
+                <td>
+                    Full Stack
+                </td>
+                <td [ngSwitch]="salary">
+                    <div *ngSwitchCase="1000">
+                        1000
+                    </div>
+                    <div *ngSwitchCase="2000">
+                        2000
+                    </div>
+                    <!-- <ng-template *ngSwitchCase="1000">
+                        1000
+                    </ng-template>
+                    <ng-template *ngSwitchCase="2000">
+                        2000
+                    </ng-template>
+                    <ng-template *ngSwitchDefault>
+                        3000
+                    </ng-template> -->
+                </td>
+            </tr>
+            <tr >
+                <td>
+                    2
+                </td>
+                <td>
+                    {{ track }}
+                </td>
+                <td >
+                    <input type="text" [(ngModel)]="track">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
