@@ -1,4 +1,29 @@
-<div class="container mt-5">
+<div [ngClass]="{'bg-dark':darkColorStatus, 'bg-default': defaultColorStatus, 'bg-green': greenColorStatus, 'bg-red': redColorStatus}" class="container p-3 mt-5" #container>
+
+  <button class="btn btn-dark mb-3" (click)="toggleTheme()">Change Theme</button>
+
+  <div class="theme-controlsContainer my-3">
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="Radio0" name="RadioInline" class="custom-control-input" value="white" #default>
+      <label (click)="applyColor(container ,default.value)" class="custom-control-label" for="Radio0">white</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="Radio1" name="RadioInline" class="custom-control-input" value="green" #green>
+      <label (click)="applyColor(container, green.value)" class="custom-control-label" for="Radio1">green</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="Radio2" name="RadioInline" class="custom-control-input" value="dark" #dark>
+      <label (click)="applyColor(container, dark.value)" class="custom-control-label" for="Radio2">dark</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="Radio3" name="RadioInline" class="custom-control-input" value="red" #red>
+      <label (click)="applyColor(container, red.value)" class="custom-control-label" for="Radio3">red</label>
+    </div>
+  </div>
+
   <!-- <app-student></app-student> -->
   <app-departments></app-departments>
 </div>

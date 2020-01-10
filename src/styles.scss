@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.bg-green {
+    background-color: green;
+    color: #fff;
+}
+
+.bg-red {
+    background-color: red;
+    color: #fff;
+}
+
+.bg-dark {
+    background-color: rgb(31, 24, 71);
+    color: #fff;
+}
+
+.bg-default {
+    background-color: #fff;
+    color: #000;
+}
+
+.custom-control-label:hover {
+    cursor: pointer;
+}
